@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import './displaytext.dart';
+import './changedatabtn.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
@@ -31,11 +34,9 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            Text(textToDisplayed[textIndex]),
-            RaisedButton(
-              child: Text('Change Data'),
-              onPressed: changeText,
-            )
+            DisplayTextWidget(textToDisplayed[textIndex]),
+            ChangeDataButton(
+                label: 'Change Data', changeTextHandler: changeText),
           ],
         ),
       ),
